@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">NicePlaceToGo_Test</string>
     <string name="welcome">Hallo schöner Platz</string>
+    <string name="shoot">Foto aufnehmen</string>
+    <string name="click">Fertig</string>
 </resources>

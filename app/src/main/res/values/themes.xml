@@ -6,4 +6,23 @@
     </style>
 
     <style name="Theme.NicePlaceToGo_Test" parent="Base.Theme.NicePlaceToGo_Test" />
+
+    <style name="Welcome">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Camera">
+        <item name="android:src">@drawable/ic_photo_camera</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="Shoot">
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:text">@string/shoot</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
 </resources>
