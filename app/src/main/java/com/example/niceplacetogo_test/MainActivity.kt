@@ -26,9 +26,9 @@ class MainActivity : AppCompatActivity() {
             // Show Signed-In-Message
             Toast.makeText(this, getString(R.string.click), Toast.LENGTH_LONG).show()
 
-            Open ListActivity
-            val intent = Intent(this, ListActivity::class.java)
-            startActivity(intent)
+            // Open ListActivity
+            //val intent = Intent(this, ListActivity::class.java)
+            //startActivity(intent)
         }
     }
 }
