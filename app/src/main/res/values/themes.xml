@@ -2,13 +2,13 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.NicePlaceToGo_Test" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/red</item> -->
     </style>
 
     <style name="Theme.NicePlaceToGo_Test" parent="Base.Theme.NicePlaceToGo_Test" />
 
     <style name="Welcome">
-        <item name="android:textSize">32sp</item>
+        <item name="android:textSize">64sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textStyle">bold</item>
     </style>

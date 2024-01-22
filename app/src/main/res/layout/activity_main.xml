@@ -1,35 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center_horizontal|center_vertical"/>
 
     <ImageView
         android:id="@+id/ivCamera"
         style="@style/Camera"
         android:layout_width="121dp"
         android:layout_height="98dp"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="559dp" />
+        android:layout_marginBottom="64dp"
+        android:layout_gravity="center_horizontal|bottom"/>
 
     <Button
         android:id="@+id/btnShoot"
         style="@style/Shoot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="667dp" />
+        android:layout_gravity="bottom" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
