@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +18,8 @@
         android:layout_width="121dp"
         android:layout_height="98dp"
         android:layout_marginBottom="64dp"
-        android:layout_gravity="center_horizontal|bottom"/>
+        android:layout_gravity="center_horizontal|bottom"
+        android:contentDescription="@string/Camera"/>
 
     <Button
         android:id="@+id/btnShoot"

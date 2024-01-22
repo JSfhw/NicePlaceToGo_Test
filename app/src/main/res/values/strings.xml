@@ -3,4 +3,5 @@
     <string name="welcome">Hello nice place</string>
     <string name="shoot">Take picture</string>
     <string name="click">Completed</string>
+    <string name="Camera">camera icon</string>
 </resources>
