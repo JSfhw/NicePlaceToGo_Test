@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.niceplacetogo_test
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,15 +7,13 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.TextView
 import androidx.room.Room
 
 class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
-    private var noteDao: NoteDao? = null
-    private var adapter: NoteAdapter? = null
+    private var placeDao: PlacesDao? = null
+    private var adapter: PlacesAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,22 +24,22 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         // Initialize Room DB
         val db = Room.databaseBuilder(
             applicationContext,
-            NotesDatabase::class.java, "notes"
+            PlacesDatabase::class.java, "places"
         ).allowMainThreadQueries().build()
-        noteDao = db.noteDao()
+        placeDao = db.PlacesDao()
 
         // Find view by Ids
-        val lvNotes = findViewById<ListView>(R.id.lvNotes)
-        adapter = NoteAdapter(this, noteDao!!.getAll())
-        lvNotes.adapter = adapter
-        lvNotes.onItemClickListener = this
+        val lvPlaces = findViewById<ListView>(R.id.lvPlaces)
+        adapter = PlacesAdapter(this, placeDao!!.getAll())
+        lvPlaces.adapter = adapter
+        lvPlaces.onItemClickListener = this
     }
 
     override fun onResume() {
         super.onResume()
 
         // Update View
-        adapter?.notes = noteDao!!.getAll()
+        adapter?.places = placeDao!!.getAll()
         adapter?.notifyDataSetChanged()
     }
 
@@ -53,7 +51,7 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.add) {
-            val intent = Intent(this, NoteEditActivity::class.java)
+            val intent = Intent(this, PlaceEditActivity::class.java)
             startActivity(intent)
         }
 
@@ -61,7 +59,7 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
     }
 
     override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, id: Long) {
-        val intent = Intent(this, NoteEditActivity::class.java)
+        val intent = Intent(this, PlaceEditActivity::class.java)
         intent.putExtra("id", id)
         startActivity(intent)
     }

@@ -6,18 +6,40 @@
     android:orientation="vertical"
     tools:context=".ListActivity">
 
+    <ImageView
+        android:id="@+id/ivPicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_photo_camera"
+        />
+
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tvDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hint_title"
-        style="@style/ListItem.Title"/>
+        style="@style/ListItem.Description"/>
 
     <TextView
-        android:id="@+id/tvMessage"
+        android:id="@+id/tvLongitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hint_message"
-        style="@style/ListItem.Message"/>
+        style="@style/ListItem.Description"/>
+
+    <TextView
+        android:id="@+id/tvLatitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_message"
+        style="@style/ListItem.Description"/>
+
+    <TextView
+        android:id="@+id/tvLikes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_message"
+        style="@style/ListItem.Description"/>
+
 
 </LinearLayout>

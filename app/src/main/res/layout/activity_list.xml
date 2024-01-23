@@ -16,7 +16,7 @@ tools:context=".ListActivity">
     app:titleTextColor="@color/white"/>
 
 <ListView
-    android:id="@+id/lvNotes"
+    android:id="@+id/lvPlaces"
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
 
