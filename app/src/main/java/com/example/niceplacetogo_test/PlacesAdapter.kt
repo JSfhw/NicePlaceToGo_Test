@@ -56,13 +56,13 @@ class PlacesAdapter(var context: Context, var places: List<Place>): BaseAdapter(
         val place = places[position]
 
         tvDescription.text = place.imgDescription
-        tvLongitude.text = place.imgLongitude
-        tvLatitude.text = place.imgLatitude
+        tvLongitude.text = place.imgLongitude.toString()
+        tvLatitude.text = place.imgLatitude.toString()
 
         val imgBase64: String = place.imgBase64
         if (imgBase64.isNotEmpty())
             ivPicture.setImageBitmap(HelperTools.decodePicString(imgBase64))
-         else
+        else
             ivPicture.setImageResource(HelperTools.getDefaultImageResource())
 
         return view

@@ -9,8 +9,8 @@ data class Place (
     //@ColumnInfo(name="title") var title: String,
     @ColumnInfo(name="imgDescription") var imgDescription: String,
     @ColumnInfo(name="imgBase64") var imgBase64: String,
-    @ColumnInfo(name="imgLongitude") var imgLongitude: String,
-    @ColumnInfo(name="imgLatitude") var imgLatitude: String,
+    @ColumnInfo(name="imgLongitude") var imgLongitude: Double,
+    @ColumnInfo(name="imgLatitude") var imgLatitude: Double,
     @ColumnInfo(name="imgLikes") var imgLike: Int,
     @PrimaryKey(autoGenerate = true) val id: Int = 0
 )
