@@ -1,11 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.NicePlaceToGo_Test" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.NicePlaceToGo" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/red</item> -->
     </style>
 
-    <style name="Theme.NicePlaceToGo_Test" parent="Base.Theme.NicePlaceToGo_Test" />
+    <style name="Theme.NicePlaceToGo" parent="Base.Theme.NicePlaceToGo" />
 
     <style name="Title">
         <item name="android:textSize">32sp</item>
@@ -48,4 +48,13 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="ListItem.Latitude">
+
+    </style>
+
+    <style name="ListItem.Longitude">
+
+    </style>
+
+    
 </resources>
