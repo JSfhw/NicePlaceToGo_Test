@@ -1,7 +1,18 @@
 <resources>
-    <string name="app_name">NicePlaceToGo_Test</string>
+    <string name="app_name">NicePlaceToGo</string>
     <string name="welcome">Hallo schöner Platz</string>
     <string name="shoot">Foto aufnehmen</string>
     <string name="click">Fertig</string>
     <string name="Camera">Kamera Icon</string>
+    <string name="signed_in">Angemeldet</string>
+    <string name="hint_title">Titel</string>
+    <string name="hint_message">Nachricht</string>
+    <string name="add">Hinzufügen</string>
+    <string name="save">Speichern</string>
+    <string name="note_saved">Foto gespeichert</string>
+    <string name="delete">Löschen</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="note_deleted">Foto gelöscht</string>
+    <string name="delete_message">Willst du dieses Foto wirklich löschen?</string>
 </resources>
