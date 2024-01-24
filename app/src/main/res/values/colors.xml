@@ -6,4 +6,5 @@
     <color name="red">#E82127</color>
     <color name="primary">#AA1207</color>
     <color name="secondary">#FF5722</color>
+    <color name="background_place">#FF5722</color>
 </resources>

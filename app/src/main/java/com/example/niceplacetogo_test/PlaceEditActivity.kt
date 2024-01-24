@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -21,6 +22,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.drawToBitmap
 import androidx.room.Room
+import com.google.android.material.snackbar.Snackbar
 
 class PlaceEditActivity : AppCompatActivity(), DialogInterface.OnClickListener {
 
@@ -114,7 +116,8 @@ class PlaceEditActivity : AppCompatActivity(), DialogInterface.OnClickListener {
             // Show toast for user
             // Toast.makeText(this, placeDao!!.getAll().toString(), Toast.LENGTH_LONG).show()
             Toast.makeText(this, placeDao!!.getDescription() + " saved", Toast.LENGTH_LONG).show()
-
+            //val snack = Snackbar.make(View(this@PlaceEditActivity), placeDao!!.getDescription() + " saved", Snackbar.LENGTH_LONG)
+            //snack.show()
             finish()
         }
 
