@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NicePlaceToGo_Test</string>
+    <string name="app_name">Nice Place To Go</string>
     <string name="welcome">Hello nice place</string>
     <string name="shoot">Take picture</string>
     <string name="click">Completed</string>
