@@ -45,7 +45,8 @@
                     <ImageView
                         android:id="@+id/etPicture"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="150dp"
+                        android:clipToOutline="true"
                         android:src="@drawable/ic_launcher_foreground"
                         android:contentDescription="a wonderful place with coordinates" />
 
