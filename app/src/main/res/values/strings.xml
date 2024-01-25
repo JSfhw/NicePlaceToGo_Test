@@ -15,4 +15,5 @@
     <string name="no">No</string>
     <string name="note_deleted">Photo deleted</string>
     <string name="delete_message">Do you really want to delete this photo?</string>
+    <string name="location_update">Update Location</string>
 </resources>

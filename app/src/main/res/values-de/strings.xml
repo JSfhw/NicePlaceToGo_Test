@@ -15,4 +15,5 @@
     <string name="no">Nein</string>
     <string name="note_deleted">Foto gelöscht</string>
     <string name="delete_message">Willst du dieses Foto wirklich löschen?</string>
+    <string name="location_update">Standort aktualisieren</string>
 </resources>
