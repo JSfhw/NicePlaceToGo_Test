@@ -16,4 +16,9 @@
     <string name="note_deleted">Foto gelöscht</string>
     <string name="delete_message">Willst du dieses Foto wirklich löschen?</string>
     <string name="location_update">Standort aktualisieren</string>
+    <string name="a_wonderful_place_with_coordinates">Ein schöner Platz mit Koordinaten</string>
+    <string name="longitude">Längengrad</string>
+    <string name="latitude">Breitengrad</string>
+    <string name="like_and_share">Liken und Teilen</string>
+    <string name="place_description">Beschreibung des Ortes</string>
 </resources>
