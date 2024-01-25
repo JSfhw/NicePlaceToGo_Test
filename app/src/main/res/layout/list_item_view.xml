@@ -70,7 +70,7 @@
                 style="@style/ListItem.Like"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:contentDescription="like and share" />
+                android:contentDescription="@string/like_and_share" />
 
         </LinearLayout>
     </LinearLayout>

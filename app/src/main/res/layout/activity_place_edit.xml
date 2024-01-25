@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_medium"
-                android:hint="place description"
+                android:hint="@string/place_description"
                 android:autofillHints="" />
 
 
@@ -49,7 +49,7 @@
                         android:clipToOutline="true"
                         android:src="@drawable/ic_camera_black"
                         android:background="@color/white"
-                        android:contentDescription="a wonderful place with coordinates" />
+                        android:contentDescription="@string/a_wonderful_place_with_coordinates" />
 
 
                     <Button
@@ -78,14 +78,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_medium"
-                        android:hint="longitude"/>
+                        android:hint="@string/longitude"/>
 
                     <EditText
                         android:id="@+id/etLatitude"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_medium"
-                        android:hint="latitude"/>
+                        android:hint="@string/latitude"/>
 
                     <Button
                         android:id="@+id/btnGPS"
