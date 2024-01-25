@@ -8,7 +8,7 @@
     <style name="Theme.NicePlaceToGo" parent="Base.Theme.NicePlaceToGo" />
 
     <style name="Title">
-        <item name="android:textSize">32sp</item>
+        <item name="android:textSize">40sp</item>
         <item name="android:textColor">@color/grey</item>
         <item name="android:textStyle">bold</item>
     </style>
