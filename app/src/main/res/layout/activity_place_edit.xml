@@ -47,7 +47,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:clipToOutline="true"
-                        android:src="@drawable/ic_camera_black"
+                        android:src="@drawable/ic_photo_camera"
                         android:background="@color/white"
                         android:contentDescription="@string/a_wonderful_place_with_coordinates" />
 

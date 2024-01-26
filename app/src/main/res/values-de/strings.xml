@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">NicePlaceToGo</string>
     <string name="welcome">Hallo schöner Platz</string>
-    <string name="shoot">Foto aufnehmen</string>
+    <string name="shoot">Foto auswählen</string>
     <string name="click">Fertig</string>
     <string name="Camera">Kamera Icon</string>
     <string name="signed_in">Angemeldet</string>
