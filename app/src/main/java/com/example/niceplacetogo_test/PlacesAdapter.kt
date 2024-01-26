@@ -84,7 +84,9 @@ class PlacesAdapter(var context: Context, var places: List<Place>): BaseAdapter(
             }
             if (addresses != null && addresses.isNotEmpty()) {
                 val address = addresses[0].getAddressLine(0)
-                tvLocation.text = address
+                var cutString = address
+                cutString = cutString.substring(0, minOf(cutString.length, 67))
+                tvLocation.text = cutString
             }
         } catch (e: Exception) {
                 /* invalid coordinates */
