@@ -45,6 +45,21 @@
                 android:text="@string/hint_title" />
 
             <TextView
+                android:id="@+id/tvLocation"
+                style="@style/ListItem.Location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvLocationGPS"
+                style="@style/ListItem.LocationGPS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+            <!--
+            <TextView
                 android:id="@+id/tvLongitude"
                 style="@style/ListItem.Latitude"
                 android:layout_width="match_parent"
@@ -55,6 +70,7 @@
                 style="@style/ListItem.Longitude"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+            -->
 
             <!--
             <ImageButton
@@ -64,13 +80,14 @@
                 android:background="@color/primary"
                 android:src="@drawable/ic_thumb_up" />
     -->
-
+            <!--
             <ImageView
                 android:id="@+id/ivLike"
                 style="@style/ListItem.Like"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:contentDescription="@string/like_and_share" />
+            -->
 
         </LinearLayout>
 
