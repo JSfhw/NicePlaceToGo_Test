@@ -59,6 +59,7 @@ class PlacesAdapter(var context: Context, var places: List<Place>): BaseAdapter(
         tvLongitude.text = place.imgLongitude.toString()
         tvLatitude.text = place.imgLatitude.toString()
 
+        /* create convert bitmap from base64 database string */
         val imgBase64: String = place.imgBase64
         if (imgBase64.isNotEmpty())
             ivPicture.setImageBitmap(HelperTools.decodePicString(imgBase64))
