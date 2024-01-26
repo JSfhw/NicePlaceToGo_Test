@@ -9,12 +9,18 @@ import androidx.room.Update
 @Dao
 interface PlacesDao {
 
+    @Query("DELETE FROM places WHERE imgLikes > 0")
+    fun deleteSamples()
+
+    @Query("SELECT COUNT(*) FROM places")
+    fun getRecordCount(): Double
+
+
     @Query("SELECT * FROM places")
     fun getAll(): List<Place>
 
     @Query("SELECT imgDescription FROM places")
     fun getDescription(): String
-
 
     @Insert
     fun insertAll(vararg places: Place)

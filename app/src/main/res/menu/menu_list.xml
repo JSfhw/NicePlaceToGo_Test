@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/community"
+        android:title="Show Communits"
+        android:icon="@drawable/ic_thumb_up"
+        app:showAsAction="always"/>
+
     <item
         android:id="@+id/add"
         android:title="@string/shoot"
         android:icon="@drawable/ic_add"
         app:showAsAction="always"/>
+
+
 </menu>

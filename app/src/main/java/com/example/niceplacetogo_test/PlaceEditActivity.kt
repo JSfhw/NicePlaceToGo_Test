@@ -115,7 +115,7 @@ class PlaceEditActivity : AppCompatActivity(), DialogInterface.OnClickListener {
 
             // Show toast for user
             // Toast.makeText(this, placeDao!!.getAll().toString(), Toast.LENGTH_LONG).show()
-            Toast.makeText(this, placeDao!!.getDescription() + " saved", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, description + " saved", Toast.LENGTH_LONG).show()
             //val snack = Snackbar.make(View(this@PlaceEditActivity), placeDao!!.getDescription() + " saved", Snackbar.LENGTH_LONG)
             //snack.show()
             finish()

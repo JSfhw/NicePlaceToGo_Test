@@ -15,10 +15,21 @@
         android:background="@color/primary"
         app:titleTextColor="@color/white"/>
 
+    <!--
+    <Button
+        android:id="@+id/btnCommunity"
+        style="@style/Community"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
+    -->
+
     <ListView
         android:id="@+id/lvPlaces"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/margin_medium"/>
+
+
 
 </LinearLayout>
