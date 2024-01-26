@@ -125,7 +125,7 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
     }
 
     private fun insertSample(description: String, imageName: String, longitude : Double, latitude: Double, likes: Int) {
-        //val ims2 = assets.open(imageName)
+        val ims2 = assets.open(imageName)
         //var exif = ExifInterface(ims2)
         val base64 : String = Base64.encodeToString(ims2.readAllBytes(), Base64.DEFAULT)
         placeDao!!.insertAll(Place(description, base64, longitude, latitude, likes))
