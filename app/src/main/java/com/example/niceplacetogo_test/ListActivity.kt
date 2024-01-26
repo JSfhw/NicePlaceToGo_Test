@@ -1,20 +1,26 @@
 package com.example.niceplacetogo_test
 
+import android.content.ClipDescription
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
+import android.widget.Button
 import android.widget.ListView
+import android.widget.Toast
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.room.Room
 
 class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
     private var placeDao: PlacesDao? = null
     private var adapter: PlacesAdapter? = null
-
+    private var isDisplayCommunity : Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
@@ -28,11 +34,26 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         ).allowMainThreadQueries().build()
         placeDao = db.PlacesDao()
 
+        if ( placeDao!!.getRecordCount() <= 0 ){
+            insertDefaultSamples()
+        }
+
+
         // Find view by Ids
         val lvPlaces = findViewById<ListView>(R.id.lvPlaces)
         adapter = PlacesAdapter(this, placeDao!!.getAll())
         lvPlaces.adapter = adapter
         lvPlaces.onItemClickListener = this
+
+        /**
+        val btnCommunity = findViewById<Button>(R.id.btnCommunity)
+        val intent = Intent(this, CommunityActivity::class.java)
+        btnCommunity.setOnClickListener{
+            startActivity((intent))
+        }
+        **/
+
+
     }
 
     override fun onResume() {
@@ -54,6 +75,18 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
             val intent = Intent(this, PlaceEditActivity::class.java)
             startActivity(intent)
         }
+        if (item.itemId == R.id.community) {
+            if (!isDisplayCommunity) {
+                isDisplayCommunity = true
+                showCommunitySample()
+                Toast.makeText(this, "displaying community", Toast.LENGTH_LONG).show()
+            } else {
+                removeCommunitySample()
+                isDisplayCommunity = false
+                Toast.makeText(this, "hide community", Toast.LENGTH_LONG).show()
+            }
+            onResume()
+        }
 
         return super.onOptionsItemSelected(item)
     }
@@ -63,4 +96,27 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         intent.putExtra("id", id)
         startActivity(intent)
     }
+
+
+    private fun showCommunitySample() {
+        insertSample("Alor Indonesia", "alor.png", -8.174303, 124.379457,10)
+        insertSample("Halmahera", "Halmahera.jpg", 1.624558, 128.513807,10)
+        insertSample("Turracher Höhe", "Turracherhoehe.jpg", 46.913901, 13.87525,10)
+    }
+
+    private fun insertDefaultSamples() {
+        insertSample("Protea Banks", "ProteaBanks.jpg", -30.83366,30.48419,0 )
+        insertSample("Malediven", "Malediven.jpg", 2.103372, 73.578195,0)
+    }
+
+    private fun insertSample(description: String, imageName: String, longitude : Double, latitude: Double, likes: Int) {
+        val ims2 = assets.open(imageName)
+        val base64 : String = Base64.encodeToString(ims2.readAllBytes(), Base64.DEFAULT)
+        placeDao!!.insertAll(Place(description, base64, longitude, latitude, likes))
+    }
+
+    private fun removeCommunitySample() {
+        placeDao!!.deleteSamples()
+    }
+
 }

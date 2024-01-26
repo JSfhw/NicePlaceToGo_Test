@@ -3,6 +3,8 @@ package com.example.niceplacetogo_test
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Base64
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import java.io.ByteArrayOutputStream
 
 
@@ -26,6 +28,11 @@ class HelperTools {
         fun getDefaultImageResource(): Int {
             return R.drawable.ic_photo_camera
         }
+
+
+
+
+
     }
 
 }
