@@ -2,6 +2,7 @@ package com.example.niceplacetogo_test
 
 import android.content.ClipDescription
 import android.content.Intent
+import android.media.ExifInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
@@ -107,9 +108,9 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
     /* demonstration for displaying pictures from community */
     private fun showCommunitySample() {
-        insertSample("Alor Indonesia", "alor.png", -8.174303, 124.379457,10)
-        insertSample("Halmahera", "Halmahera.jpg", 1.624558, 128.513807,10)
-        insertSample("Turracher Höhe", "Turracherhoehe.jpg", 46.913901, 13.87525,10)
+        insertSample("Alor Indonesia", "alor.png",  124.379457,-8.174303,10)
+        insertSample("Halmahera", "Halmahera.jpg",  128.513807,1.624558,10)
+        insertSample("Turracher Höhe", "Turracherhoehe.jpg",  13.87525,46.913901,10)
     }
 
     /* hide community demonstration - deletes entries on database */
@@ -119,12 +120,13 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
 
     private fun insertDefaultSamples() {
-        insertSample("Protea Banks", "ProteaBanks.jpg", -30.83366,30.48419,0 )
-        insertSample("Malediven", "Malediven.jpg", 2.103372, 73.578195,0)
+        insertSample("Protea Banks", "ProteaBanks.jpg", 30.48419,-30.83366,0 )
+        insertSample("Malediven", "Malediven.jpg",  73.578195,2.103372,0)
     }
 
     private fun insertSample(description: String, imageName: String, longitude : Double, latitude: Double, likes: Int) {
-        val ims2 = assets.open(imageName)
+        //val ims2 = assets.open(imageName)
+        //var exif = ExifInterface(ims2)
         val base64 : String = Base64.encodeToString(ims2.readAllBytes(), Base64.DEFAULT)
         placeDao!!.insertAll(Place(description, base64, longitude, latitude, likes))
     }

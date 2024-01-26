@@ -71,12 +71,26 @@ class PlacesAdapter(var context: Context, var places: List<Place>): BaseAdapter(
         val helplat =  String.format("%.6f", place.imgLatitude)
         tvLocationGPS.text = "$helplong, $helplat"
 
-        val geocoder = Geocoder(context, Locale.getDefault())
-        val addresses = place!!.imgLatitude?.let { place.imgLongitude?.let { it1 -> geocoder.getFromLocation(it, it1, 1) } }
-        if (addresses != null && addresses.isNotEmpty()) {
-            val address = addresses[0].getAddressLine(0)
-            tvLocation.text = address
-        }
+        try {
+            val geocoder = Geocoder(context, Locale.getDefault())
+            val addresses = place!!.imgLatitude?.let {
+                place.imgLongitude?.let { it1 ->
+                    geocoder.getFromLocation(
+                        it,
+                        it1,
+                        1
+                    )
+                }
+            }
+            if (addresses != null && addresses.isNotEmpty()) {
+                val address = addresses[0].getAddressLine(0)
+                tvLocation.text = address
+            }
+        } catch (e: Exception) {
+                /* invalid coordinates */
+                tvLocation.text = ""
+              }
+
 
 
         /* create convert bitmap from base64 database string */

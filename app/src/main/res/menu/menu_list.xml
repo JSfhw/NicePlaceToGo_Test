@@ -4,8 +4,8 @@
 
     <item
         android:id="@+id/community"
-        android:title="Show Communits"
-        android:icon="@drawable/ic_thumb_up"
+        android:title="Show Community"
+        android:icon="@drawable/ic_group"
         app:showAsAction="always"/>
 
     <item
