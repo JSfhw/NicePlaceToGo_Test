@@ -82,6 +82,7 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         }
 
         /* show or hide community "sample" entries */
+        /*
         if (item.itemId == R.id.community) {
             if (!isDisplayCommunity) {
                 isDisplayCommunity = true
@@ -93,6 +94,10 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
                 Toast.makeText(this, "hide community", Toast.LENGTH_LONG).show()
             }
             onResume()
+        } */
+        if (item.itemId == R.id.community) {
+            val intent = Intent(this, CommunityActivity::class.java)
+            startActivity(intent)
         }
 
         return super.onOptionsItemSelected(item)
@@ -108,9 +113,9 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
     /* demonstration for displaying pictures from community */
     private fun showCommunitySample() {
-        insertSample("Alor Indonesia", "alor.png",  124.379457,-8.174303,10)
-        insertSample("Halmahera", "Halmahera.jpg",  128.513807,1.624558,10)
-        insertSample("Turracher Höhe", "Turracherhoehe.jpg",  13.87525,46.913901,10)
+        insertSample("Alor Indonesia", "alor.png",  124.379457,-8.174303,1)
+        insertSample("Halmahera", "Halmahera.jpg",  128.513807,1.624558,1)
+        insertSample("Turracher Höhe", "Turracherhoehe.jpg",  13.87525,46.913901,1)
     }
 
     /* hide community demonstration - deletes entries on database */

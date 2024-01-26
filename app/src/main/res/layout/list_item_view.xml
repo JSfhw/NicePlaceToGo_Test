@@ -72,14 +72,7 @@
                 android:layout_height="wrap_content" />
             -->
 
-            <!--
-            <ImageButton
-                android:id="@+id/ibLike"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:background="@color/primary"
-                android:src="@drawable/ic_thumb_up" />
-    -->
+
             <!--
             <ImageView
                 android:id="@+id/ivLike"

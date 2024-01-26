@@ -47,7 +47,8 @@
     <style name="ListItem.Like">
         <item name="android:background">@color/primary</item>
         <item name="android:src">@drawable/ic_thumb_up</item>
-        <item name="android:layout_gravity">right|bottom</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_gravity">left|bottom</item>
     </style>
 
     <style name="ListItem.Description">

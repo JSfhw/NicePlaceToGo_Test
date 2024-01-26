@@ -12,14 +12,21 @@ interface PlacesDao {
     @Query("DELETE FROM places WHERE imgLikes > 0")
     fun deleteSamples()
 
-    @Query("SELECT COUNT(*) FROM places")
+    @Query("SELECT * FROM places WHERE imgLikes > 0")
+    fun getCommunity(): List<Place>
+
+    @Query("SELECT COUNT(*) FROM places WHERE imgLikes > 0")
+    fun getCommunityRecordCount(): Double
+
+
+    @Query("SELECT COUNT(*) FROM places WHERE imgLikes = 0")
     fun getRecordCount(): Double
 
 
-    @Query("SELECT * FROM places")
+    @Query("SELECT * FROM places WHERE imgLikes = 0")
     fun getAll(): List<Place>
 
-    @Query("SELECT imgDescription FROM places")
+    @Query("SELECT imgDescription FROM places WHERE imgLikes = 0")
     fun getDescription(): String
 
     @Insert
