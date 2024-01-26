@@ -12,12 +12,14 @@ class HelperTools {
 
     /* static methods */
     companion object {
+        /* decode base64 string from database to binary and return bitmap */
         fun decodePicString(encodedString: String): Bitmap {
 
             val imageBytes = Base64.decode(encodedString, Base64.DEFAULT)
 
             return BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
         }
+
 
         fun encodePicString(bm:Bitmap): String {
             val byteArray = ByteArrayOutputStream()

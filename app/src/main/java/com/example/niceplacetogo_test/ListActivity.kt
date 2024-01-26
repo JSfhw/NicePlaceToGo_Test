@@ -34,12 +34,13 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         ).allowMainThreadQueries().build()
         placeDao = db.PlacesDao()
 
+        /* insert Samples Entries when no database entries exists */
         if ( placeDao!!.getRecordCount() <= 0 ){
             insertDefaultSamples()
         }
 
 
-        // Find view by Ids
+        // Find view (list_item_views per entry) by Ids
         val lvPlaces = findViewById<ListView>(R.id.lvPlaces)
         adapter = PlacesAdapter(this, placeDao!!.getAll())
         lvPlaces.adapter = adapter
@@ -56,6 +57,7 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
     }
 
+    /* refresh display */
     override fun onResume() {
         super.onResume()
 
@@ -64,17 +66,21 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         adapter?.notifyDataSetChanged()
     }
 
+    /* create menu entries */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_list, menu)
 
         return super.onCreateOptionsMenu(menu)
     }
 
+    /* menu items selected */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.add) {
             val intent = Intent(this, PlaceEditActivity::class.java)
             startActivity(intent)
         }
+
+        /* show or hide community "sample" entries */
         if (item.itemId == R.id.community) {
             if (!isDisplayCommunity) {
                 isDisplayCommunity = true
@@ -91,6 +97,7 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         return super.onOptionsItemSelected(item)
     }
 
+    /* click on places entry start edit */
     override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, id: Long) {
         val intent = Intent(this, PlaceEditActivity::class.java)
         intent.putExtra("id", id)
@@ -98,11 +105,18 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
     }
 
 
+    /* demonstration for displaying pictures from community */
     private fun showCommunitySample() {
         insertSample("Alor Indonesia", "alor.png", -8.174303, 124.379457,10)
         insertSample("Halmahera", "Halmahera.jpg", 1.624558, 128.513807,10)
         insertSample("Turracher Höhe", "Turracherhoehe.jpg", 46.913901, 13.87525,10)
     }
+
+    /* hide community demonstration - deletes entries on database */
+    private fun removeCommunitySample() {
+        placeDao!!.deleteSamples()
+    }
+
 
     private fun insertDefaultSamples() {
         insertSample("Protea Banks", "ProteaBanks.jpg", -30.83366,30.48419,0 )
@@ -115,8 +129,5 @@ class ListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         placeDao!!.insertAll(Place(description, base64, longitude, latitude, likes))
     }
 
-    private fun removeCommunitySample() {
-        placeDao!!.deleteSamples()
-    }
 
 }
